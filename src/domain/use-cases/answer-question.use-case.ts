@@ -1,4 +1,4 @@
-import { Answer } from "../entities/answer.entity"
+import { Answer } from '../entities/answer.entity'
 
 interface AnswerQuestionUseCaseRequest {
   instructorId: string
@@ -8,7 +8,11 @@ interface AnswerQuestionUseCaseRequest {
 
 export class AnswerQuestionUseCase {
   execute({ instructorId, questionId, content }: AnswerQuestionUseCaseRequest) {
-    const answer = new Answer(content)
+    const answer = new Answer({
+      content,
+      questionId,
+      authorId: instructorId,
+    })
 
     return answer
   }
