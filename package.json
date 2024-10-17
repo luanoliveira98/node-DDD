@@ -4,13 +4,16 @@
   "description": "DDD study material.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx vitest run",
+    "test:watch": "npx vitest"
   },
   "keywords": [],
   "author": "Luan Oliveira",
   "license": "ISC",
   "devDependencies": {
+    "@rocketseat/eslint-config": "2.2.2",
     "@types/node": "22.7.6",
-    "typescript": "5.6.3"
+    "typescript": "5.6.3",
+    "vitest": "2.1.3"
   }
 }
