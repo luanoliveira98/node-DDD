@@ -15,3 +15,7 @@ An are of understanding where all people involved in building the software have 
 - **Entities:** is everything I can understand as something that will be maintained by our user or by our application. Entities are usually found in our conversations with domain experts.
 - **Use Cases:** are the verbs that I found in our conversations with domain experts.
 - **Value Objects:** are properties of entities that have business rules.
+
+## Clean Architecture
+
+Decoupling, making each piece of code not tightly coupled to an external layer.
