@@ -3,14 +3,21 @@ import {
   Question,
   QuestionProps,
 } from '@/domain/forum/enterprise/entities/question.entity'
+import { faker } from '@faker-js/faker'
 
-export function makeQuestionFactory(override: Partial<QuestionProps> = {}) {
-  const question = Question.create({
-    title: 'Example question',
-    authorId: new UniqueEntityID('1'),
-    content: 'Example content',
-    ...override,
-  })
+export function makeQuestionFactory(
+  override: Partial<QuestionProps> = {},
+  id?: UniqueEntityID,
+) {
+  const question = Question.create(
+    {
+      title: faker.lorem.sentence(),
+      authorId: new UniqueEntityID('1'),
+      content: faker.lorem.text(),
+      ...override,
+    },
+    id,
+  )
 
   return question
 }
