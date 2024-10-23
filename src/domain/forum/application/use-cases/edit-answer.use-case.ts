@@ -1,5 +1,5 @@
 import { Answer } from '../../enterprise/entities/answer.entity'
-import { AnswersRepository } from '../repositories/answers.repository'
+import { AnswersRepository } from '../repositories/answers.repository.interface'
 
 interface EditAnswerUseCaseRequest {
   authorId: string
