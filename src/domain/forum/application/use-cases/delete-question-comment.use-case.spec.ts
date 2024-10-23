@@ -12,7 +12,7 @@ describe('Delete Question Comment', () => {
     sut = new DeleteQuestionCommentUseCase(inMemoryQuestionCommentsRepository)
   })
 
-  it('should be able to comment a question comment', async () => {
+  it('should be able to delete a question comment', async () => {
     const questionComment = makeQuestionCommentFactory()
 
     await inMemoryQuestionCommentsRepository.create(questionComment)
@@ -25,7 +25,7 @@ describe('Delete Question Comment', () => {
     expect(inMemoryQuestionCommentsRepository.items).toHaveLength(0)
   })
 
-  it('should not be able to comment a question comment from another user', async () => {
+  it('should not be able to delete a question comment from another user', async () => {
     const questionComment = makeQuestionCommentFactory()
 
     await inMemoryQuestionCommentsRepository.create(questionComment)
