@@ -12,7 +12,7 @@ describe('Fetch Question Answers', () => {
     sut = new FetchQuestionAnswersUseCase(inMemoryAnswersRepository)
   })
 
-  it('should be able to fetch fetch question answers', async () => {
+  it('should be able to fetch question answers', async () => {
     await inMemoryAnswersRepository.create(
       makeAnswerFactory({ questionId: new UniqueEntityID('question-1') }),
     )
