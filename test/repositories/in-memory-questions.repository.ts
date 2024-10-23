@@ -1,4 +1,4 @@
-import { QuestionsRepository } from '@/domain/forum/application/repositories/question.repository'
+import { QuestionsRepository } from '@/domain/forum/application/repositories/questions.repository'
 import { Question } from '@/domain/forum/enterprise/entities/question.entity'
 
 export class InMemoryQuestionsRepository implements QuestionsRepository {
