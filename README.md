@@ -9,7 +9,7 @@ An are of understanding where all people involved in building the software have 
 - **Domain Experts:** these are the people who deeply understand the problem we are solving with our software.
   - **Conversation:** is the first thing that is very important in development of a software. From the conversation you will have more knowledge of the domain, this being the area of understanding in which you are developing software. From these conversations, a ubiquitous language will be created.
 - **Ubiquitous Language:** or domain language, is an universal language in which all people involved in building that software can communicate equally.
-- **Aggregates:**
+- **Aggregates:** are entities that depend on another entity to exist and they are manipulated at the same time.
 - **Domain Events:**
 - **Bounded Contexts:**
 - **Entities:** is everything I can understand as something that will be maintained by our user or by our application. Entities are usually found in our conversations with domain experts.
