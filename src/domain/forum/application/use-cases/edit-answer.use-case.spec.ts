@@ -2,6 +2,7 @@ import { InMemoryAnswersRepository } from 'test/repositories/in-memory-answers.r
 import { EditAnswerUseCase } from './edit-answer.use-case'
 import { makeAnswerFactory } from 'test/factories/make-answer.factory'
 import { UniqueEntityID } from '@/core/entities/value-objects/unique-entity-id'
+import { NotAllowedError } from './errors/not-allowed.error'
 
 describe('Edit Answer', () => {
   let sut: EditAnswerUseCase
@@ -36,14 +37,14 @@ describe('Edit Answer', () => {
 
     await inMemoryAnswersRepository.create(newAnswer)
 
-    await expect(() =>
-      sut.execute({
-        authorId: 'Different-author-id',
-        answerId: newAnswer.id.toValue(),
-        content: 'Content test',
-      }),
-    ).rejects.toBeInstanceOf(Error)
+    const result = await sut.execute({
+      authorId: 'Different-author-id',
+      answerId: newAnswer.id.toValue(),
+      content: 'Content test',
+    })
 
+    expect(result.isLeft()).toBe(true)
+    expect(result.value).toBeInstanceOf(NotAllowedError)
     expect(inMemoryAnswersRepository.items[0]).not.toMatchObject({
       content: 'Content test',
     })
