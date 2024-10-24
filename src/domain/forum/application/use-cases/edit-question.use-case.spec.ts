@@ -12,9 +12,11 @@ describe('Edit Question', () => {
   let inMemoryQuestionAttachmentsRepository: InMemoryQuestionAttachmentsRepository
 
   beforeEach(() => {
-    inMemoryQuestionsRepository = new InMemoryQuestionsRepository()
     inMemoryQuestionAttachmentsRepository =
       new InMemoryQuestionAttachmentsRepository()
+    inMemoryQuestionsRepository = new InMemoryQuestionsRepository(
+      inMemoryQuestionAttachmentsRepository,
+    )
 
     sut = new EditQuestionUseCase(
       inMemoryQuestionsRepository,
@@ -24,8 +26,8 @@ describe('Edit Question', () => {
 
   it('should be able to edit a question', async () => {
     const newQuestion = makeQuestionFactory()
-
     await inMemoryQuestionsRepository.create(newQuestion)
+
     await inMemoryQuestionAttachmentsRepository.items.push(
       makeQuestionAttachmentFactory({
         questionId: newQuestion.id,
