@@ -10,7 +10,7 @@ An are of understanding where all people involved in building the software have 
   - **Conversation:** is the first thing that is very important in development of a software. From the conversation you will have more knowledge of the domain, this being the area of understanding in which you are developing software. From these conversations, a ubiquitous language will be created.
 - **Ubiquitous Language:** or domain language, is an universal language in which all people involved in building that software can communicate equally.
 - **Aggregates:** are entities that depend on another entity to exist and they are manipulated at the same time.
-- **Domain Events:**
+- **Domain Events:** a way to connect different use cases without coupling them together.
 - **Bounded Contexts:** how we divide the domain of our application into small parts. They are divided into three types:
   - **Core:** what makes money, it can't stop;
   - **Supporting:** provides support for the core to work;
