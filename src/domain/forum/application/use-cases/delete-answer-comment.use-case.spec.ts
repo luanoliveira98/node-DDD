@@ -1,7 +1,7 @@
 import { makeAnswerCommentFactory } from 'test/factories/make-answer-comment.factory'
 import { DeleteAnswerCommentUseCase } from './delete-answer-comment.use-case'
 import { InMemoryAnswerCommentsRepository } from 'test/repositories/in-memory-answer-comments.repository'
-import { NotAllowedError } from './errors/not-allowed.error'
+import { NotAllowedError } from '@/core/errors/not-allowed.error'
 
 describe('Delete Answer Comment', () => {
   let sut: DeleteAnswerCommentUseCase

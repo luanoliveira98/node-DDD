@@ -1,7 +1,7 @@
 import { DeleteQuestionCommentUseCase } from './delete-question-comment.use-case'
 import { InMemoryQuestionCommentsRepository } from 'test/repositories/in-memory-question-comments.repository'
 import { makeQuestionCommentFactory } from 'test/factories/make-question-comment.factory'
-import { NotAllowedError } from './errors/not-allowed.error'
+import { NotAllowedError } from '@/core/errors/not-allowed.error'
 
 describe('Delete Question Comment', () => {
   let sut: DeleteQuestionCommentUseCase
