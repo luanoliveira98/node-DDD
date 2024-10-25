@@ -1,10 +1,11 @@
-import { AggregateRoot } from "../entities/aggregate-root.entity";
-import { UniqueEntityID } from "../entities/value-objects/unique-entity-id";
-import { DomainEvent } from "./domain-event.interface";
-import { DomainEvents } from "./domain-events";
+import { AggregateRoot } from '../entities/aggregate-root.entity'
+import { UniqueEntityID } from '../entities/value-objects/unique-entity-id'
+import { DomainEvent } from './domain-event.interface'
+import { DomainEvents } from './domain-events'
 
 class CustomAggregateCreated implements DomainEvent {
   public ocurredAt: Date
+  // eslint-disable-next-line no-use-before-define
   private aggregate: CustomAggregate
 
   constructor(aggregate: CustomAggregate) {
